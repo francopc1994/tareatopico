@@ -10,10 +10,11 @@
           <li class="list-group-item">Cedula: {{item.cedula}}</li>
           <li class="list-group-item">Email: {{item.email}}</li>
         </ul>
-        <button class="btn btn-warning btn-sm" @click="editarFormulario(item)">Editar</button>
+        <button class="btn btn-primary btn-lg" @click="editarFormulario(item)">Editar</button>
       </div>
 
       <form @submit.prevent="editarPerfil(user)" v-if="modoEditar">
+        </br>
         <h3>Editar usuario</h3>
 
         <ValidationProvider name="name" rules="required">
@@ -76,8 +77,8 @@
           </div>
         </ValidationProvider>
 
-        <button class="btn btn-warning" type="submit" @click="submit">Editar</button>
-        <button class="btn btn-danger" type="submit" @click="cancelarEdicion">Cancelar</button>
+        <button class="btn btn-primary btn-lg" type="submit" @click="submit">Editar</button>
+        <button class="btn btn-primary btn-lg" type="submit" @click="cancelarEdicion">Cancelar</button>
       </form>
     </div>
   </div>
