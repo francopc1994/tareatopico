@@ -51,6 +51,7 @@ class PerfilController extends Controller
         $users->cedula = $request->cedula;
         $users->telefono = $request->telefono;
         $users->email = $request->email;
+        $users->avatar = $request->avatar;
         $users->id = auth()->id();
 
         $users->save();
@@ -95,6 +96,7 @@ class PerfilController extends Controller
     $users->cedula = $request->cedula;
     $users->telefono = $request->telefono;
     $users->email = $request->email;
+    $users->avatar = $request->avatar;
     $users->save();
     return $users;
 }

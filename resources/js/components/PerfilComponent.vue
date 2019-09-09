@@ -9,12 +9,14 @@
           <li class="list-group-item">Telefono: {{item.telefono}}</li>
           <li class="list-group-item">Cedula: {{item.cedula}}</li>
           <li class="list-group-item">Email: {{item.email}}</li>
+
         </ul>
         <button class="btn btn-primary btn-lg" @click="editarFormulario(item)">Editar</button>
+
       </div>
 
       <form @submit.prevent="editarPerfil(user)" v-if="modoEditar">
-        </br>
+        
         <h3>Editar usuario</h3>
 
         <ValidationProvider name="name" rules="required">
@@ -79,6 +81,7 @@
 
         <button class="btn btn-primary btn-lg" type="submit" @click="submit">Editar</button>
         <button class="btn btn-primary btn-lg" type="submit" @click="cancelarEdicion">Cancelar</button>
+        
       </form>
     </div>
   </div>
@@ -96,7 +99,7 @@ export default {
     return {
       users: [],
       modoEditar: false,
-      user: { name: "", lastname: "", cedula: "", telefono: "", email: "" }
+      user: { name: "", lastname: "", cedula: "", telefono: "", email: "", avatar: "" }
     };
   },
   created() {
@@ -116,6 +119,7 @@ export default {
       this.user.cedula = item.cedula;
       this.user.telefono = item.telefono;
       this.user.email = item.email;
+      this.user.avatar = item.avatar;
       this.user.id = item.id;
       this.modoEditar = true;
     },
@@ -125,7 +129,8 @@ export default {
         lastname: user.lastname,
         cedula: user.cedula,
         telefono: user.telefono,
-        email: user.email
+        email: user.email,
+        avatar: user.avatar
       };
       axios.put(`/perfil/${user.id}`, params).then(res => {
         this.modoEditar = false;

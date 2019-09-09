@@ -44,6 +44,10 @@
   box-sizing: border-box;
 }
 
+body, html {
+  height: 120%;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -73,6 +77,16 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 [tabindex="-1"]:focus {
@@ -10644,3 +10658,15 @@ a.text-dark:focus {
   }
 }
 
+.bg {
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

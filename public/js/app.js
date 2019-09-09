@@ -1983,6 +1983,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1994,7 +1997,8 @@ __webpack_require__.r(__webpack_exports__);
         lastname: "",
         cedula: "",
         telefono: "",
-        email: ""
+        email: "",
+        avatar: ""
       }
     };
   },
@@ -2015,6 +2019,7 @@ __webpack_require__.r(__webpack_exports__);
       this.user.cedula = item.cedula;
       this.user.telefono = item.telefono;
       this.user.email = item.email;
+      this.user.avatar = item.avatar;
       this.user.id = item.id;
       this.modoEditar = true;
     },
@@ -2026,7 +2031,8 @@ __webpack_require__.r(__webpack_exports__);
         lastname: user.lastname,
         cedula: user.cedula,
         telefono: user.telefono,
-        email: user.email
+        email: user.email,
+        avatar: user.avatar
       };
       axios.put("/perfil/".concat(user.id), params).then(function (res) {
         _this2.modoEditar = false;
@@ -39989,8 +39995,6 @@ var render = function() {
                 }
               },
               [
-                _c("br"),
-                _vm._v(" "),
                 _c("h3", [_vm._v("Editar usuario")]),
                 _vm._v(" "),
                 _c("ValidationProvider", {

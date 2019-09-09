@@ -14,10 +14,8 @@ class AddExtraFieldToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-        $table->string('lastname');
-        $table->string('cedula');
-        $table->string('telefono');
-    });
+            $table->string('avatar')->default("default_avatar.png");
+        });
     }
 
     /**
@@ -28,9 +26,7 @@ class AddExtraFieldToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-         $table->dropColumn('lastname');
-        $table->dropColumn('cedula');
-        $table->dropColumn('telefono');
+            $table->dropColumn('avatar');
         });
     }
 }
