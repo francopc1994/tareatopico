@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Hash;
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+        
     }
+    public function indexx()
+   {
+        $users = User::paginate(4);
 
+        return view('home')->with('users',$users);
+
+   }
       public function showChangePasswordForm(){
         return view('auth.changepassword');
     }
