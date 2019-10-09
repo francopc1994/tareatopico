@@ -22,6 +22,7 @@ Route::get('/profile', function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@indexx');
 Route::resource('/perfil', 'PerfilController')->middleware('auth');
 Route::get('/changePassword','HomeController@showChangePasswordForm');
 Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
