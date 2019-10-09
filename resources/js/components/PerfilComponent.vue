@@ -1,7 +1,11 @@
 <template>
   <div>
+    
+          
+
     <div class="card-body">
       <h4>Bienvenido Usuario</h4>
+      
 
       <div v-for="(item, index) in users" :key="index" class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
@@ -11,10 +15,13 @@
           <li class="list-group-item">Email: {{item.email}}</li>
 
         </ul>
+
+      
+
         <button class="btn btn-primary btn-lg" @click="editarFormulario(item)">Editar</button>
 
       </div>
-
+      
       <form @submit.prevent="editarPerfil(user)" v-if="modoEditar">
         
         <h3>Editar usuario</h3>
@@ -84,7 +91,7 @@
         
       </form>
     </div>
-  </div>
+    </div>   
 </template>
 
 
@@ -105,8 +112,10 @@ export default {
   created() {
     axios.get("/perfil").then(res => {
       this.users = res.data;
+      
     });
   },
+  
 
   components: {
     ValidationProvider
@@ -148,6 +157,7 @@ export default {
         email: ""
       };
     },
+    
 
     
   }

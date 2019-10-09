@@ -3,13 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div>
+        <div class="col-md-3">
             <img width="200px" height="200px" src="{{ asset('uploads/avatars/'.Auth::user()->avatar) }}">                    
             
+            @if(Auth::user()->id == 1)            <h1> Welcome Administrator</h1> 
+            @endif    
         
         </div> 
         
-        <div class="col-md-8">
+        <div class="col-md-5">
         
        
             <div class="card">
@@ -30,7 +32,7 @@
                                             {{ Form::close() }}
                             </div>
                         </div>     
-                    </div>    
+                </div>    
                 
 
                 
@@ -38,7 +40,8 @@
             </div>
                 
         </div>
-        
+    
     </div>
+    
 </div>
 @endsection
