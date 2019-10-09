@@ -3,15 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <img width="200px" height="200px" src="{{ asset('uploads/avatars/'.Auth::user()->avatar) }}">                    
             
-            @if(Auth::user()->id == 1)            <h1> Welcome Administrator</h1> 
-            @endif    
+           
         
         </div> 
         
-        <div class="col-md-5">
+        <div class="col-md-6">
         
        
             <div class="card">
@@ -40,7 +39,38 @@
             </div>
                 
         </div>
-    
+        @if(Auth::user()->id == 1)    
+             
+        <div class = "col-md-8">
+        </br>
+        
+            <div class="card">
+                <h1>Lista de usuarios</h1>
+  
+                <table class="table table-striped">
+                {{ $users->links() }}
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Cedula</th>
+                        <th>Telefono</th>
+                    </tr>
+                    @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->lastname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->cedula }}</td>
+                        <td>{{ $user->telefono }}</td>
+                    </tr>
+                    
+
+                    @endforeach  
+            </div>
+
+        </div>
+        @endif  
     </div>
     
 </div>
