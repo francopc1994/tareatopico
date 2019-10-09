@@ -9,8 +9,7 @@
           class="card-text"
         >Te damos la bienvenida a BlizzReg, eliga la opcion adecuada a sus necesidades</p>
       </div>
-    </div>
-    
+    </div> 
     <div class="row text-center ">
       <div class="col-sm-6">
         <div class="card text-white bg-secondary mb-3">
