@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
  
 use Illuminate\Support\Facades\Auth;
+
+use App\User;
  
 class UserController extends Controller
 {
@@ -31,6 +33,14 @@ class UserController extends Controller
     $user->save();
  
     return redirect()->route('user.profile');
+    
   }
+
+  public function delete($id)
+{
+        User::where('id', $id)->delete();
+        // or you can use User::destroy($id);
+        return redirect()->back()->with('info', 'User deleted successfully'); 
+}
   
 }
