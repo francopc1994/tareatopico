@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-2">
-            <img width="200px" height="200px" src="{{ asset('uploads/avatars/'.Auth::user()->avatar) }}">                    
+        <div class="col-md-3 ">
+            <img width="200px" height="200px" class="border border-dark" src="{{ asset('uploads/avatars/'.Auth::user()->avatar) }}" >                    
             
            
         
@@ -41,7 +41,7 @@
         </div>
         @if(Auth::user()->id == 1)    
              
-        <div class = "col-md-8">
+        <div class = "col-md-9">
         </br>
         
             <div class="card">
@@ -55,6 +55,7 @@
                         <th>Email</th>
                         <th>Cedula</th>
                         <th>Telefono</th>
+                        <th>Eliminar</th>
                     </tr>
                     @foreach ($users as $user)
                     <tr>
@@ -63,6 +64,11 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->cedula }}</td>
                         <td>{{ $user->telefono }}</td>
+                        <td>
+                            <a class="button is-outlined" href="{{route('user.delete',['id' => $user->id])}}" onclick="return confirm('Seguro queires eliminar a este usuario?')" >
+                                Eliminar
+                            </a>
+                        </td>
                     </tr>
                     
 
